@@ -10,6 +10,15 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "nodemon": "^3.1.4"
+    "bcrypt": "^5.1.1",
+    "express": "^4.19.2",
+    "js": "^0.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mysql": "^2.18.1",
+    "mysql2": "^3.10.2",
+    "nod": "^0.2.0",
+    "node": "^18.20.4",
+    "nodemon": "^3.1.4",
+    "sequelize": "^6.37.3"
   }
 }

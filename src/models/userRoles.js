@@ -1,14 +1,25 @@
-module.exports = ( sequelize, DataTypes ) => {
-    const userRole = sequelize.define('userRole', {
-        userId: {
-            type: DataTypes.INTEGER,
-            allowNull: false
-        },
-        roleId: {
-            type: DataTypes.INTEGER,
-            allowNull: false
+module.exports = (sequelize, DataTypes) => {
+    const UserRole = sequelize.define('userRole', {
+      id: {
+        type: DataTypes.INTEGER,
+        primaryKey: true,
+        autoIncrement: true
+      },
+      userId: {
+        type: DataTypes.INTEGER,
+        references: {
+          model: 'users',
+          key: 'id'
         }
-    })
-
-    return userRole
-}
+      },
+      roleId: {
+        type: DataTypes.INTEGER,
+        references: {
+          model: 'roles',
+          key: 'id'
+        }
+      }
+    });
+  
+    return UserRole;
+  };

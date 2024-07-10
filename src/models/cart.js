@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-    const Seller = sequelize.define('seller', {
+    const Cart = sequelize.define('cart', {
       id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
@@ -12,15 +12,19 @@ module.exports = (sequelize, DataTypes) => {
           key: 'id'
         }
       },
-      business_name: {
-        type: DataTypes.STRING,
-        allowNull: false
+      productId: {
+        type: DataTypes.INTEGER,
+        references: {
+          model: 'products',
+          key: 'id'
+        }
       },
-      address: {
-        type: DataTypes.STRING,
+      quantity: {
+        type: DataTypes.INTEGER,
         allowNull: false
       }
     });
   
-    return Seller;
+    return Cart;
   };
+  

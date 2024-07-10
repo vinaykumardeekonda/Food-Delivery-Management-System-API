@@ -1,15 +1,22 @@
-module.exports = ( sequelize, DataTypes ) => {
-    
+module.exports = (sequelize, DataTypes) => {
     const Buyer = sequelize.define('buyer', {
-        userId: {
-            type: DataTypes.INTEGER,
-            allowNull: false
-        },
-        address: {
-            type: DataTypes.STRING,
-            allowNull: false
+      id: {
+        type: DataTypes.INTEGER,
+        primaryKey: true,
+        autoIncrement: true
+      },
+      userId: {
+        type: DataTypes.INTEGER,
+        references: {
+          model: 'users',
+          key: 'id'
         }
-    })
-
-    return Buyer
-}
+      },
+      address: {
+        type: DataTypes.STRING,
+        allowNull: false
+      }
+    });
+  
+    return Buyer;
+  };

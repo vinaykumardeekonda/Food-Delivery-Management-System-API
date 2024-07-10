@@ -22,5 +22,7 @@ db.userRole = require('./userRoles')(sequelize, DataTypes)
 db.Role = require('./Roles')(sequelize, DataTypes)
 db.Buyer = require('./buyer')(sequelize, DataTypes)
 db.Seller = require('./seller')(sequelize, DataTypes)
+db.Product = require('./products')(sequelize, DataTypes)
+db.Cart = require('./cart')(sequelize, DataTypes)
 
 module.exports = db

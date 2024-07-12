@@ -24,5 +24,8 @@ db.Buyer = require('./buyer')(sequelize, DataTypes)
 db.Seller = require('./seller')(sequelize, DataTypes)
 db.Product = require('./products')(sequelize, DataTypes)
 db.Cart = require('./cart')(sequelize, DataTypes)
+db.Order = require('./order'),(sequelize, DataTypes)
+db.OrderItem = require('./orderItem'),(sequelize, DataTypes)
+db.Payment = require('./payment'),(sequelize, DataTypes)
 
 module.exports = db

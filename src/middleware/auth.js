@@ -5,7 +5,7 @@ const responses = require('../responses/responses');
 const Roles = require('../models/Roles');
 
 const config = {
-  tokenSecretKey: 'your_secret_key_here',
+  tokenSecretKey: 'my-token-secret-key',
 };
 
 const tokenSecretKey = config.tokenSecretKey;

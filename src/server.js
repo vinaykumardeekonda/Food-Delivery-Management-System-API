@@ -1,13 +1,22 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const db = require('./models');
+const rateLimit = require('express-rate-limit');
 
 const app = express();
 const authRoutes = require('./routes/v1/auth/auth.routes');
-
 app.use(bodyParser.json())
 
-app.use('/api', authRoutes);
+const limiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  max: 100,
+  message: {
+    status: 429,
+    message: 'Too many requests. Please try again later.'
+  }
+});
+
+app.use('/api', limiter, authRoutes);
 
 // db.sequelize.sync({force: false})
 

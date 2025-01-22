@@ -65,7 +65,7 @@ class AuthController {
           where: {
             id: tokenPayload.userId,
           },
-          attributes: ['firstName', 'lastName', 'email'], // Return only necessary information
+          attributes: ['firstName', 'lastName', 'email'],
         });
   
         if (findUser) {

@@ -2,9 +2,18 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const db = require('./models');
 const rateLimit = require('express-rate-limit');
+const cors = require('cors');
 
 const app = express();
 const authRoutes = require('./routes/v1/auth/auth.routes');
+
+const corsOptions = {
+  origin: "http://localhost:3000",
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+};
+app.use(cors(corsOptions));
+
 app.use(bodyParser.json())
 
 const limiter = rateLimit({
